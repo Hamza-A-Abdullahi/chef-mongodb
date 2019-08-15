@@ -18,7 +18,7 @@ describe 'mongodb::default' do
       expect(chef_run).to update_apt_update 'update_sources'
     end
     it 'should add mongodb-org to the source list' do
-      expect(chef_run).to add_apt_repository 'mongodb-org'
+      expect(chef_run).to add_apt_repository ('mongodb-org')
     end
     it 'should install mongodb' do
       expect(chef_run).to install_package 'mongodb-org'
